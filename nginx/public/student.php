@@ -25,11 +25,19 @@
 
             $data = []; 
 
-            $sql = 'select
-                    student_id,
-                    first_name,
-                    last_name                                 
-                    from student
+            // $sql = 'select
+            //         student_id,
+            //         first_name,
+            //         last_name                                 
+            //         from student
+            //         ';
+
+                    $sql = 'select
+                    `product_id`,
+                    `VALUE`,
+                    `KEY`                                 
+                    from populateData
+                    where product_id in (100, 500, 1000, 2000, 3000, 4000, 5000, 6000, 8000)
                     ';
 
             // $cache_key = md5($sql);
@@ -91,9 +99,9 @@
 
             foreach ($data as $row) {
                 echo '<tr>';
-                echo '<td>' . $row['student_id'] . '</td>';
-                echo '<td>' . $row['first_name'] . '</td>';
-                echo '<td>' . $row['last_name']  . '</td>';                     
+                echo '<td>' . $row['product_id'] . '</td>';
+                echo '<td>' . $row['VALUE'] . '</td>';
+                echo '<td>' . $row['KEY']  . '</td>';                     
                 echo '</tr>'; 
             }  
            
